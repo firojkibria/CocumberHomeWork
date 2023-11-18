@@ -19,24 +19,29 @@ public class LoginStepDefination extends TestBase {
 		driver.get("https://techfios.com/billing/?ng=login/");
 	}
 
-	@When("User enters username as {string}")
-	public void user_enters_username_as(String username) {
+	@When("User enters the {string} in the username field")
+	public void user_enters_the_in_the_username_field(String username) {
 		loginPage = PageFactory.initElements(driver, LoginPage.class);
 		loginPage.enterUserName(username);
 
 	}
 
-	@When("User enters password as{string}")
-	public void user_enters_password_as(String password) {
+	// @When("User enters password as{string}")
+	// public void user_enters_password_as(String password) {
+	// loginPage.enterPassword(password);
+
+	// }
+	@When("User enters the {string} in the password field")
+	public void user_enters_the_in_the_password_field(String password){
 		loginPage.enterPassword(password);
 
 	}
 
-	@When("User click on signin button")
-	public void user_click_on_signin_button() {
+	@When("User clicks on {string}")
+	public void user_clicks_on(String string) {
 		loginPage.clickSignInButton();
+	
 	}
-
 	@Then("User should land on?dashboard?page")
 	public void user_should_land_on_dashboard_page() {
 

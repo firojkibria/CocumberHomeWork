@@ -1,10 +1,15 @@
-Feature: Techfios login Functionality Validation
+Feature: Techfios Other billing login page functionality validation
 
-  Scenario: User should be able to login with valid credentials
+ Background: 
     Given User is on the techfios login page
-    When User enters username as "demo@techfios.com"
-    When User enters password as"abc123"
-    When User click on signin button
+
+Scenario Outline: User should be able to login with valid credentials 
+	and open a new account	
+	When User enters the "<username>" in the username field
+	When User enters the "<password>" in the password field
+	And User clicks on "login"
+
+   
     Then User should land on?dashboard?page
     And User clicks on BankCash
     And User clicks on NewAccount
@@ -17,3 +22,8 @@ Feature: Techfios login Functionality Validation
     And User enters "https://mybank.com" in the internet BankingURL field in accounts page
     And User clicks on submit button
     Then User should be able to validate account created successfully
+
+    Examples: 
+	|username |password|
+	|demo@techfios.com|abc123|
+	|deme1@rechfios.com|abc123|

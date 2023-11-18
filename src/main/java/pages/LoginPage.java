@@ -125,6 +125,7 @@ public class LoginPage {
 		SubmitButton.click();
 
 	}
+
 	public String getAccountsPageTitle() {
 		return driver.getTitle();
 	}
